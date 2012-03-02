@@ -177,6 +177,7 @@ LOCAL_MODULE_STEM := e2fsck
 LOCAL_FORCE_STATIC_EXECUTABLE := true
 include $(BUILD_EXECUTABLE)
 
+ifneq ($(BOARD_HAS_SMALL_RECOVERY),true)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := $(e2fsck_src_files)
@@ -193,6 +194,7 @@ LOCAL_UNSTRIPPED_PATH := $(PRODUCT_OUT)/symbols/recovery
 LOCAL_MODULE_STEM := e2fsck
 LOCAL_FORCE_STATIC_EXECUTABLE := true
 include $(BUILD_EXECUTABLE)
+endif
 
 include $(CLEAR_VARS)
 

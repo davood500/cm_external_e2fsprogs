@@ -79,6 +79,7 @@ LOCAL_MODULE_STEM := mke2fs
 LOCAL_FORCE_STATIC_EXECUTABLE := true
 include $(BUILD_EXECUTABLE)
 
+ifneq ($(BOARD_HAS_SMALL_RECOVERY),true)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := $(mke2fs_src_files)
@@ -94,6 +95,7 @@ LOCAL_UNSTRIPPED_PATH := $(PRODUCT_OUT)/symbols/recovery
 LOCAL_MODULE_STEM := mke2fs
 LOCAL_FORCE_STATIC_EXECUTABLE := true
 include $(BUILD_EXECUTABLE)
+endif
 
 include $(CLEAR_VARS)
 
@@ -196,6 +198,7 @@ LOCAL_FORCE_STATIC_EXECUTABLE := true
 
 include $(BUILD_EXECUTABLE)
 
+ifneq ($(BOARD_HAS_SMALL_RECOVERY),true)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := $(tune2fs_src_files)
@@ -212,6 +215,7 @@ LOCAL_MODULE_STEM := tune2fs
 LOCAL_FORCE_STATIC_EXECUTABLE := true
 
 include $(BUILD_EXECUTABLE)
+endif
 
 include $(CLEAR_VARS)
 
